@@ -1,9 +1,6 @@
 #include <iostream>
+using namespace std;
 int main()
 {
-	int a; 
-	std::cout << "hello world";
-
-	std::cin >> a;
-	return 0;
+	cout << "daniel kaleta";
 }
