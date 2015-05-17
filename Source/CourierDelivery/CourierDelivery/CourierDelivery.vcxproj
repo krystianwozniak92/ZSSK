@@ -69,14 +69,18 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Salesman.cpp" />
     <ClCompile Include="SalesmanAnnealing.cpp" />
+    <ClCompile Include="SalesmanGenetic.cpp" />
     <ClCompile Include="SalesmanTabuSearch.cpp" />
+    <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Edge.h" />
     <ClInclude Include="Knapsack.h" />
     <ClInclude Include="Salesman.h" />
     <ClInclude Include="SalesmanAnnealing.h" />
+    <ClInclude Include="SalesmanGenetic.h" />
     <ClInclude Include="SalesmanTabuSearch.h" />
+    <ClInclude Include="Timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
