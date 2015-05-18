@@ -35,7 +35,6 @@ int main()
 	// Start Salesman algorithms---------------
 	// Measure the execution time of algorithms
 	// Get best cycle (results)
-
 	timer.startTimer();
 	sAnnealing->start();
 	timer.stopTimer();
@@ -72,7 +71,6 @@ int main()
 	system("pause");
 	return 0;
 }
-
 
 // Function definitions------------------------
 template < class T >
