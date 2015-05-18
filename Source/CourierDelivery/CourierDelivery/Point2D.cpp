@@ -30,8 +30,34 @@ int Point2D::getPosY()
 	return this->y;
 }
 
-std::string Point2D::toString()
+std::string Point2D::toString() const
 {
 	std::string result = "(" + std::to_string(x) + ", " + std::to_string(y) + ")";
 	return result;
+}
+
+int Point2D::operator<(const Point2D &rhs) const
+{
+	if (this->x == rhs.x && this->y < rhs.y) return 1;
+	if (this->x < rhs.x) return 1;
+	return 0;
+}
+int Point2D::operator==(const Point2D &rhs) const
+{
+	if (this->x != rhs.x) return 0;
+	if (this->y != rhs.y) return 0;
+	return 1;
+}
+Point2D& Point2D::operator=(const Point2D &rhs)
+{
+	this->x = rhs.x;
+	this->y = rhs.y;
+
+	return *this;
+}
+
+std::ostream &operator<<(std::ostream &output, const Point2D &p2d)
+{
+	output << p2d.toString();
+	return output;
 }

@@ -5,6 +5,7 @@
 #include "SalesmanGenetic.h"
 #include <string>
 #include "Point2D.h"
+#include "DeliveryMap.h"
 using namespace std;
 
 // Function declarations----------------------
@@ -74,6 +75,14 @@ int main()
 	// Point2D
 	Point2D p2d = Point2D(-3, 5);
 	cout << "Point2D: " << p2d.toString() << endl;
+	
+	
+
+	// DeliveryMap
+	DeliveryMap deMap = DeliveryMap();
+	deMap.addPoint(Point2D(-3, 5), 5);
+	deMap.addPoint(Point2D(-2, 5), 9);
+	deMap.getContent();
 	system("pause");
 	return 0;
 }
@@ -87,7 +96,7 @@ string GetVectorContent(vector<T>* vector)
 	for (unsigned i = 0; i < vector->size(); i++)
 	{
 		result += to_string((*vector)[i]);
-		if (i < vector->size() -1 )
+		if (i < vector->size() - 1)
 			result += ", ";
 	}
 
