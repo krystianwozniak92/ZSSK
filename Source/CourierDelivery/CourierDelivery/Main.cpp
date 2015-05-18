@@ -4,6 +4,7 @@
 #include "SalesmanTabuSearch.h"
 #include "SalesmanGenetic.h"
 #include <string>
+#include "Point2D.h"
 using namespace std;
 
 // Function declarations----------------------
@@ -68,6 +69,11 @@ int main()
 	cout << "time: " << timeSalesAnnealing << endl;
 	//-----------------------------------------
 
+	//TESTS------------------------------------------------------------------------
+
+	// Point2D
+	Point2D p2d = Point2D(-3, 5);
+	cout << "Point2D: " << p2d.toString() << endl;
 	system("pause");
 	return 0;
 }
