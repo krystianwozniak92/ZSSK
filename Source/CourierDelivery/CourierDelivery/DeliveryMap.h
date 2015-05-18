@@ -11,6 +11,6 @@ public:
 	~DeliveryMap();
 
 	void addPoint(WeightPoint);
-	std::string getContent();
+	std::string toString();
 };
 

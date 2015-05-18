@@ -21,7 +21,7 @@ void DeliveryMap::addPoint(WeightPoint point)
 	this->points->push_back(point);
 }
 
-std::string DeliveryMap::getContent()
+std::string DeliveryMap::toString()
 {
 	std::string result = "{";
 
@@ -29,7 +29,9 @@ std::string DeliveryMap::getContent()
 	{
 		for (int i = 0; i < this->points->size(); i++)
 		{
-			this->points[i];
+			result += (*points)[i].toString();
+			if (i < this->points->size() - 1)
+				result += " ; ";
 		}
 	}
 

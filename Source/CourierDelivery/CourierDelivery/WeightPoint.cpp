@@ -23,3 +23,9 @@ Point2D WeightPoint::getPoint2D()
 WeightPoint::~WeightPoint()
 {
 }
+
+std::string WeightPoint::toString()
+{
+	std::string result = "[" + this->p2d.toString() + ", " + std::to_string(this->weight) + "]";
+	return result;
+}
