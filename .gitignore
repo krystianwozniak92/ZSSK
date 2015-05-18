@@ -155,6 +155,6 @@ $RECYCLE.BIN/
 # Mac desktop service store files
 .DS_Store
 
-/Source/CourierDelivery/CourierDelivery/CourierDelivery.vcxproj
-/Source/CourierDelivery/CourierDelivery/CourierDelivery
-/Source/CourierDelivery/CourierDelivery/Main.cpp
+CourierDelivery/CourierDelivery.vcxproj
+CourierDelivery/CourierDelivery
+CourierDelivery/Main.cpp
