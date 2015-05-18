@@ -6,6 +6,8 @@
 #include "Knapsack.h"
 #include "KnapsackBB.h"
 #include <string>
+#include "Point2D.h"
+
 using namespace std;
 
 // Function declarations----------------------
@@ -87,8 +89,12 @@ int main()
 
 	cout << "Branch and bound for knapsack: \n";
 	cout << "Best value: " << kBB->plecak(count, weight, value, 100) << endl;
-	//cout << "time: " << timeSalesAnnealing << endl;
+	cout << "time: " << timeSalesAnnealing << endl;
 
+	//TESTS------------------------------------
+	Point2D point2d = Point2D(2, 3);
+	std::cout << point2d.toString() << endl;
+	//-----------------------------------------
 
 	system("pause");
 	return 0;
