@@ -38,3 +38,53 @@ std::string DeliveryMap::toString()
 	result += "}";
 	return result;
 }
+
+std::vector<WeightPoint>* DeliveryMap::getSquare(enum SquareType squareType)
+{
+	std::vector<WeightPoint>* map = new std::vector<WeightPoint>();
+	switch (squareType)
+	{
+		case SquareType::TopLeft:
+
+			for (int i = 0; i < points->size(); i++)
+			{
+				Point2D p2d = (*points)[i].getPoint2D();
+				if (p2d.getPosX() < 0 && p2d.getPosY() >= 0)
+					map->push_back((*points)[i]);
+			}
+
+			break;
+
+		case SquareType::TopRight:
+			for (int i = 0; i < points->size(); i++)
+			{
+				Point2D p2d = (*points)[i].getPoint2D();
+				if (p2d.getPosX() >= 0 && p2d.getPosY() >= 0)
+					map->push_back((*points)[i]);
+			}
+			break;
+
+		case SquareType::BottomLeft:
+
+			for (int i = 0; i < points->size(); i++)
+			{
+				Point2D p2d = (*points)[i].getPoint2D();
+				if (p2d.getPosX() < 0 && p2d.getPosY() < 0)
+					map->push_back((*points)[i]);
+			}
+
+			break;
+
+		case SquareType::BottomRight:
+
+			for (int i = 0; i < points->size(); i++)
+			{
+				Point2D p2d = (*points)[i].getPoint2D();
+				if (p2d.getPosX() >= 0 && p2d.getPosY() < 0)
+					map->push_back((*points)[i]);
+			}
+
+			break;
+	}
+	return map;
+}
