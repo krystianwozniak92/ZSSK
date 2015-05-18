@@ -17,8 +17,5 @@ public:
 	std::string toString() const;
 	~Point2D();
 
-	int operator<(const Point2D &rhs) const;
-	int operator==(const Point2D &rhs) const;
-	Point2D& operator=(const Point2D &rhs);
 };
 

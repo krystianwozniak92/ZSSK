@@ -30,7 +30,7 @@ int Point2D::getPosY()
 	return this->y;
 }
 
-std::string Point2D::toString()
+std::string Point2D::toString() const
 {
 	std::string result = "(" + std::to_string(x) + ", " + std::to_string(y) + ")";
 	return result;
