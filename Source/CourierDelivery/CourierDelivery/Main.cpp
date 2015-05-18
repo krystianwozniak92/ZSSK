@@ -3,6 +3,8 @@
 #include "SalesmanAnnealing.h"
 #include "SalesmanTabuSearch.h"
 #include "SalesmanGenetic.h"
+#include "Knapsack.h"
+#include "KnapsackBB.h"
 #include <string>
 using namespace std;
 
@@ -15,6 +17,7 @@ string GetVectorContent(vector<T>* vector);
 int main()
 {
 	Salesman* salesman = new Salesman(5);
+	Knapsack* knapsack = new Knapsack(100);
 	Timer timer = Timer();
 
 	// Salesman PARAMETERS---------------------
@@ -27,10 +30,16 @@ int main()
 	int mutationCount = 2;
 	int maxTime = 3;
 	//-----------------------------------------
+	//Knapsack PARAMETERS
+	//BB
+	int count= 5; //ilosc
+	int value[5] = { 1, 2, 3, 4, 5 };
+	int weight[5] = { 10, 13, 16, 13, 30 };
 
 	SalesmanAnnealing* sAnnealing = new SalesmanAnnealing(salesman, lambda);
 	SalesmanTabuSearch* sTabuSearch = new SalesmanTabuSearch(salesman, iterations);
 	SalesmanGenetic* sGenetic = new SalesmanGenetic(salesman);
+	KnapsackBB* kBB = new KnapsackBB(knapsack);
 
 	// Start Salesman algorithms---------------
 	// Measure the execution time of algorithms
@@ -52,6 +61,14 @@ int main()
 	timer.stopTimer();
 	double timeSalesGenetic = timer.getElapsedTime();
 	vector<unsigned>*  resultSalesGenetic = sGenetic->GetResult();
+
+	/* Plecak
+	timer.startTimer();
+	kBB->start();
+	timer.stopTimer();
+	double timeSalesGenetic = timer.getElapsedTime();*/
+//	kBB->plecak(count,weight,value,100);
+	
 	//-----------------------------------------
 
 	// Send result to the default output-------
@@ -67,6 +84,11 @@ int main()
 	cout << "Best cycle: " << GetVectorContent<unsigned>(resultSalesGenetic) << endl;
 	cout << "time: " << timeSalesAnnealing << endl;
 	//-----------------------------------------
+
+	cout << "Branch and bound for knapsack: \n";
+	cout << "Best value: " << kBB->plecak(count, weight, value, 100) << endl;
+	//cout << "time: " << timeSalesAnnealing << endl;
+
 
 	system("pause");
 	return 0;

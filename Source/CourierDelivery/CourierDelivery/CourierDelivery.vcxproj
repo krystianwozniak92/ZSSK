@@ -66,6 +66,7 @@
   <ItemGroup>
     <ClCompile Include="Edge.cpp" />
     <ClCompile Include="Knapsack.cpp" />
+    <ClCompile Include="KnapsackBB.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Salesman.cpp" />
     <ClCompile Include="SalesmanAnnealing.cpp" />
@@ -76,6 +77,7 @@
   <ItemGroup>
     <ClInclude Include="Edge.h" />
     <ClInclude Include="Knapsack.h" />
+    <ClInclude Include="KnapsackBB.h" />
     <ClInclude Include="Salesman.h" />
     <ClInclude Include="SalesmanAnnealing.h" />
     <ClInclude Include="SalesmanGenetic.h" />
