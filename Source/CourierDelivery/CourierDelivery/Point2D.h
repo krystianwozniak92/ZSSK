@@ -6,8 +6,8 @@ class Point2D
 	int x;
 	int y;
 public:
+	Point2D();
 	Point2D(int x, int y);
-
 	void setPosX(int x);
 	void setPosY(int y);
 
@@ -17,8 +17,5 @@ public:
 	std::string toString() const;
 	~Point2D();
 
-	int operator<(const Point2D &rhs) const;
-	int operator==(const Point2D &rhs) const;
-	Point2D& operator=(const Point2D &rhs);
 };
 

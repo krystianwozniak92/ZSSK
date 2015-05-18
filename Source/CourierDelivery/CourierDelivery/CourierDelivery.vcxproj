@@ -18,7 +18,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -64,25 +64,33 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DeliveryMap.cpp" />
     <ClCompile Include="Edge.cpp" />
+    <ClCompile Include="FileHelper.cpp" />
     <ClCompile Include="Knapsack.cpp" />
     <ClCompile Include="KnapsackBB.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Point2D.cpp" />
     <ClCompile Include="Salesman.cpp" />
     <ClCompile Include="SalesmanAnnealing.cpp" />
     <ClCompile Include="SalesmanGenetic.cpp" />
     <ClCompile Include="SalesmanTabuSearch.cpp" />
     <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="WeightPoint.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DeliveryMap.h" />
     <ClInclude Include="Edge.h" />
+    <ClInclude Include="FileHelper.h" />
     <ClInclude Include="Knapsack.h" />
     <ClInclude Include="KnapsackBB.h" />
+    <ClInclude Include="Point2D.h" />
     <ClInclude Include="Salesman.h" />
     <ClInclude Include="SalesmanAnnealing.h" />
     <ClInclude Include="SalesmanGenetic.h" />
     <ClInclude Include="SalesmanTabuSearch.h" />
     <ClInclude Include="Timer.h" />
+    <ClInclude Include="WeightPoint.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

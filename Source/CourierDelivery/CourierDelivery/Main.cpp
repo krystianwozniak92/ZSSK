@@ -6,6 +6,9 @@
 #include "Knapsack.h"
 #include "KnapsackBB.h"
 #include <string>
+#include "Point2D.h"
+#include "WeightPoint.h"
+#include "DeliveryMap.h"
 using namespace std;
 
 // Function declarations----------------------
@@ -85,10 +88,21 @@ int main()
 	cout << "time: " << timeSalesAnnealing << endl;
 	//-----------------------------------------
 
+
 	cout << "\nBranch and bound for knapsack: \n";
 	cout << "Best value: " << kBB->plecak(count, weight, value, knapsack) << endl;
 	cout << "time: " << timeKnapBB << endl;
 
+	//TESTS------------------------------------
+	Point2D point2d = Point2D(2, 3);
+	std::cout << point2d.toString() << endl;
+
+
+	DeliveryMap map;
+	map.addPoint(WeightPoint(Point2D(1,5), 3));
+	map.addPoint(WeightPoint(Point2D(-3, 8), 1));
+	map.addPoint(WeightPoint(Point2D(0, 3), 9));
+	//-----------------------------------------
 
 	system("pause");
 	return 0;
