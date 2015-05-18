@@ -42,3 +42,8 @@ int Knapsack::knapSack(int wt[], int val[], int n)
 
 	return K[n][rozmiar];
 }
+
+int Knapsack::getSize()
+{
+	return rozmiar;
+}
