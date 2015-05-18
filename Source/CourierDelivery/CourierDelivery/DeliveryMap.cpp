@@ -3,35 +3,33 @@
 
 DeliveryMap::DeliveryMap()
 {
-	this->pointWeightMap = nullptr;
+	this->points = nullptr;
 }
 
 
 DeliveryMap::~DeliveryMap()
 {
-	if (this->pointWeightMap != nullptr)
-		delete pointWeightMap;
+	if (this->points != nullptr)
+		delete points;
 }
 
-void DeliveryMap::addPoint(Point2D point, int weight)
+void DeliveryMap::addPoint(WeightPoint point)
 {
-	if (this->pointWeightMap == nullptr)
-		this->pointWeightMap = new std::map<Point2D, int>();
-	else
-	{
-		(*pointWeightMap).insert(std::pair<Point2D, int>(point, weight));
-	}
+	if (this->points == nullptr)
+		this->points = new std::vector<WeightPoint>();
+
+	this->points->push_back(point);
 }
 
 std::string DeliveryMap::getContent()
 {
 	std::string result = "{";
 
-	if (this->pointWeightMap->size() > 0)
+	if (this->points->size() > 0)
 	{
-		for (int i = 0; i < this->pointWeightMap->size(); i++)
+		for (int i = 0; i < this->points->size(); i++)
 		{
-			(*pointWeightMap);
+			this->points[i];
 		}
 	}
 

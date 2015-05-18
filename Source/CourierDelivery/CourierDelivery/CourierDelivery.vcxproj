@@ -64,6 +64,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DeliveryMap.cpp" />
     <ClCompile Include="Edge.cpp" />
     <ClCompile Include="Knapsack.cpp" />
     <ClCompile Include="KnapsackBB.cpp" />
@@ -77,6 +78,7 @@
     <ClCompile Include="WeightPoint.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DeliveryMap.h" />
     <ClInclude Include="Edge.h" />
     <ClInclude Include="Knapsack.h" />
     <ClInclude Include="KnapsackBB.h" />
