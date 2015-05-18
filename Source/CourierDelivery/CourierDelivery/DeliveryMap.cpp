@@ -19,7 +19,7 @@ void DeliveryMap::addPoint(Point2D point, int weight)
 		this->pointWeightMap = new std::map<Point2D, int>();
 	else
 	{
-		(*pointWeightMap)[point] = weight;
+		(*pointWeightMap).insert(std::pair<Point2D, int>(point, weight));
 	}
 }
 
