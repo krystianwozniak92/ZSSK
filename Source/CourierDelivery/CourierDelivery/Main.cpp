@@ -65,12 +65,12 @@ int main()
 	double timeSalesGenetic = timer.getElapsedTime();
 	vector<unsigned>*  resultSalesGenetic = sGenetic->GetResult();
 
-	/* Plecak
+	// Plecak
 	timer.startTimer();
-	kBB->start();
+	kBB->plecak(count, weight, value, knapsack);
 	timer.stopTimer();
-	double timeSalesGenetic = timer.getElapsedTime();*/
-//	kBB->plecak(count,weight,value,100);
+	double timeKnapBB = timer.getElapsedTime();
+
 	
 	//-----------------------------------------
 
@@ -88,13 +88,15 @@ int main()
 	cout << "time: " << timeSalesAnnealing << endl;
 	//-----------------------------------------
 
-	cout << "Branch and bound for knapsack: \n";
-	cout << "Best value: " << kBB->plecak(count, weight, value, 100) << endl;
-	cout << "time: " << timeSalesAnnealing << endl;
+
+	cout << "\nBranch and bound for knapsack: \n";
+	cout << "Best value: " << kBB->plecak(count, weight, value, knapsack) << endl;
+	cout << "time: " << timeKnapBB << endl;
 
 	//TESTS------------------------------------
 	Point2D point2d = Point2D(2, 3);
 	std::cout << point2d.toString() << endl;
+
 
 	DeliveryMap map;
 	map.addPoint(WeightPoint(Point2D(1,5), 3));

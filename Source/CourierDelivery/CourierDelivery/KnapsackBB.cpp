@@ -2,6 +2,7 @@
 #include "Knapsack.h"
 KnapsackBB::KnapsackBB()
 {
+	//maxWartosc_ = 0;
 }
 KnapsackBB::KnapsackBB(Knapsack* knapsack)
 {
@@ -49,7 +50,7 @@ int KnapsackBB::bound(KnapsackBB u, int n, int W, std::vector<int> pVa, std::vec
 	}
 }
 
-int KnapsackBB::plecak(int n, int waga[], int wartosc[], int W)
+int KnapsackBB::plecak(int n, int waga[], int wartosc[], Knapsack* k)
 {
 	std::queue<KnapsackBB> kolejka; //zdefiniowanie kolejki
 	KnapsackBB u, v, max;
@@ -87,9 +88,9 @@ int KnapsackBB::plecak(int n, int waga[], int wartosc[], int W)
 		u.waga_ += waga[u.poziom_]; //ustawiam wage jako sume aktualnej wagi
 		u.wartosc_ += wartosc[u.poziom_]; //ustawiam wartosc jako wartosc aktualnej wartosci
 
-		u.bound_ = bound(u, n, W, wart, wag); //zwracamy górna granice wartosci rozwiazania 
+		u.bound_ = bound(u, n, k->getSize(), wart, wag); //zwracamy górna granice wartosci rozwiazania 
 
-		if (u.waga_ <= W && u.wartosc_ > max.maxWartosc_)
+		if (u.waga_ <= k->getSize() && u.wartosc_ > max.maxWartosc_)
 			//jesli waga przedmiotu nie przekracza wagi plecaka i jesli zysk wezla jest lepszy niz rozwiazanie
 			max.maxWartosc_ = u.wartosc_; //ustaw maxWartosc jako zysk aktualnego dziecka
 
@@ -99,7 +100,7 @@ int KnapsackBB::plecak(int n, int waga[], int wartosc[], int W)
 		u.waga_ = v.waga_; //waga korzenia jako waga wezla
 		u.wartosc_ = v.wartosc_; //wartosc korzenia jako wartosc wezla
 
-		u.bound_ = bound(u, n, W, wart, wag); //zwracamy górna granice wartosci rozwiazania 
+		u.bound_ = bound(u, n, k->getSize(), wart, wag); //zwracamy górna granice wartosci rozwiazania 
 
 		if (u.bound_ > max.maxWartosc_) // jesli granica górna wiêksza od rozwiazania tzn ze wezel jest obiecujacy
 			kolejka.push(u); //wstawiamy o kolejki jako kolejny wezel obiecujacy
