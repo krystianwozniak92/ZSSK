@@ -126,3 +126,9 @@ double Salesman::getDistance(double P1_X, double P1_Y, double P2_X, double P2_Y)
 {
 	return sqrt(pow((P2_X - P1_X), 2) + pow((P2_Y - P1_Y), 2));
 }
+
+Salesman::Salesman(std::vector<std::vector<double>>* vec)
+{
+	this->_mx = vec;
+	this->_n = (*vec)[0].size();
+}

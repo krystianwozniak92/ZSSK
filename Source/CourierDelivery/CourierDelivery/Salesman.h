@@ -24,6 +24,7 @@ public:
 	// Konstruktor parametryczny
 	Salesman(unsigned int n);
 
+	Salesman(std::vector<std::vector<double>>* vec);
 	// Konstruktor (z pliku)
 	Salesman(std::string filepath);
 
