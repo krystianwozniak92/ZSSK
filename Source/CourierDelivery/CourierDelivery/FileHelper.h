@@ -4,6 +4,7 @@
 #include <fstream>
 #include <iostream>
 #include <String>
+#include "DeliveryMap.h"
 
 class FileHelper
 {
@@ -11,15 +12,15 @@ public:
 	FileHelper();
 	~FileHelper();
 
-	int gen;//(1-100)
-	int gen2;//(1-10)
+	int gen; //(1-100)
+	int gen2; //(1-10)
 	int x;
-	int	y; 
+	int	y;
 	int	w;
-	std::ofstream file;
+	std::fstream file;
 
-void RandomGenerator();
+	void RandomGenerator();
 
-void FileReader();
+	DeliveryMap* FileReader();
 
 };

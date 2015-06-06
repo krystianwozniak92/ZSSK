@@ -1,5 +1,10 @@
 #include "WeightPoint.h"
 
+WeightPoint::WeightPoint()
+{
+
+}
+
 WeightPoint::WeightPoint(Point2D p2d, int weight)
 {
 	this->p2d = p2d;
